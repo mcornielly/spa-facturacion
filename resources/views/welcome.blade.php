@@ -98,7 +98,6 @@
         </div> --}}
 
         <div id="root">
-            <example-component></example-component>
         </div>
     </body>
     <script src="{{ mix('js/app.js') }}"></script>
