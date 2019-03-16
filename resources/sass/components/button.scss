@@ -37,19 +37,19 @@ a.btn-primary {
 }
 
 .btn-primary {
-	background: color-primary;
+	background: $color-primary;
 	color: #fff;
 	box-shadow: 0 1px darken($color-primary, 15%);
 }
 
 .btn-error {
-	background: color-error;
+	background: $color-error;
 	color: #fff;
 	box-shadow: 0 1px darken($color-error, 15%);
 }
 
 .btn-success {
-	background: color-success;
+	background: $color-success;
 	color: #fff;
 	box-shadow: 0 1px darken($color-success, 15%);
 }

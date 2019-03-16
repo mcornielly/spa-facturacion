@@ -2,14 +2,16 @@
 	width: 820px;
 	margin: 50px auto;
 	box-shadow: $box-shadow;
+	padding: 25px;
 
 	&-body {
 		padding-top: 25px;
 	}
 
 	&-footer {
+		text-align: justify;
 		padding-top: 25px;
-		width: 50%;
+		width: 100%;
 	}
 
 	&-title {

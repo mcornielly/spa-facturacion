@@ -19,7 +19,7 @@ class CustomerController extends Controller
     		->limit(10)
     		->get();
 
-    		return [compact('result')];
+    		return compact('result');
 
     }
 }

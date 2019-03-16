@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="nav navbar">&nbsp;</div>
+        <div class="navbar">&nbsp;</div>
         <div class="content">
         	<transition name="fade" mode="out-in">
         		<router-view class="page" :key="$route.path"></router-view>

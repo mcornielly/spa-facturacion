@@ -15,7 +15,7 @@ class InvoiceController extends Controller
     		->orderBy('created_at', 'DESC')
     		->paginate(15);
 
-    	return [compact('invoices')];	
+    	return compact('invoices');	
     }
 
     public function create()
@@ -41,7 +41,7 @@ class InvoiceController extends Controller
     		]
     	];
 
-    	return [compact('form')];
+    	return compact('form');
     }
 
     public function store(Request $request)
@@ -93,7 +93,7 @@ class InvoiceController extends Controller
     	$invoice = Invoice::with(['customer', 'items.product'])
     		->findOrFail($id);
 
-    	return [compact('invoice')];	
+    	return compact('invoice');	
     }
 
     public function edit($id)
@@ -101,7 +101,7 @@ class InvoiceController extends Controller
     	$invoice = Invoice::with(['customer', 'items.product'])
     		->findOrFail($id);
 
-    	return [compact('invoice')];	
+    	return compact('invoice');	
     }
 
     public function update(Request $request, $id)
@@ -152,7 +152,7 @@ class InvoiceController extends Controller
 
     	// return responce()
     	// 	->json(['deleted' => true]);	
-    	return [compact('invoice')];
+    	return compact('invoice');
     }
 
 

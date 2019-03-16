@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
    ========================================================================== */
@@ -1249,21 +1249,21 @@ a.btn-primary {
 }
 
 .btn-primary {
-  background: color-primary;
+  background: #3aa3e3;
   color: #fff;
   -webkit-box-shadow: 0 1px #1a7bb7;
           box-shadow: 0 1px #1a7bb7;
 }
 
 .btn-error {
-  background: color-error;
+  background: #e75654;
   color: #fff;
   -webkit-box-shadow: 0 1px #d1201d;
           box-shadow: 0 1px #d1201d;
 }
 
 .btn-success {
-  background: color-success;
+  background: #66bb6a;
   color: #fff;
   -webkit-box-shadow: 0 1px #419345;
           box-shadow: 0 1px #419345;
@@ -1310,6 +1310,7 @@ a.btn-primary {
   margin: 50px auto;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 25px;
 }
 
 .document-body {
@@ -1317,8 +1318,9 @@ a.btn-primary {
 }
 
 .document-footer {
+  text-align: justify;
   padding-top: 25px;
-  width: 50%;
+  width: 100%;
 }
 
 .document-title {
@@ -1555,11 +1557,5 @@ textarea.form-control {
 .typeahead-active {
   background: #3aa3e3 !important;
   color: #fff;
-}
-
-.navbar-laravel {
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 

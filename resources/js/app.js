@@ -6,7 +6,7 @@
  */
 
 // require('./bootstrap');
-require('./router');
+// require('./router');
 
 
 window.Vue = require('vue');
@@ -36,6 +36,12 @@ Vue.component('show-component', require('./components/ShowComponent.vue'));
 
 import AppComponent from './components/AppComponent.vue'
 import router from './router'
+
+Vue.filter('formatMoney', (value) => {
+	return Number(value)
+		.toFixed(2)
+		.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$l",)
+})
 
 const app = new Vue({
     el: '#root',
