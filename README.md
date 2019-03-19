@@ -14,4 +14,4 @@
 - Forms with selectable product and customers
 
 
-![alt text](https://onedrive.live.com/?cid=8782312DAA0079E0&id=8782312DAA0079E0%2110747&parId=root&parQt=sharedby&o=OneUp)
+![alt text](https://github.com/mcornielly/spa-facturacion/tree/master/img_git)
