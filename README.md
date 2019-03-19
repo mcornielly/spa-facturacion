@@ -22,10 +22,13 @@
 -----------------------------------
 
 ### Installation
-`git clone https://github.com/codekerala/laravel-vue-js-spa-invoice.git`
+`git clone https://github.com/mcornielly/spa-facturacion.git`
 
-`cd laravel-vue-js-spa-invoice`
+`cd spa-invoice`
 
 `composer install`
 
 `npm install`
+
+### Remember
+To create the .env file
