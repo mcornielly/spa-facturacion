@@ -10,8 +10,10 @@
 - CRUD
 - Single Page Aplication 
 - Pagination
-- Sorting by columns
-- Advance filter
-- Filter relations
+- Progressbar
+- Forms with selectable product and customers
 
-![alt tag](https://github.com/codekerala/spa-laravel-vuejs/raw/master/s1.png)
+![alt tag](https://1drv.ms/u/s!AuB5AKotMYKH03v6C-mLwhxZj64D)
+![alt tag](https://1drv.ms/u/s!AuB5AKotMYKH03yH2lcdqtxS5N7B)
+![alt tag](https://1drv.ms/u/s!AuB5AKotMYKH03v6C-mLwhxZj64D)
+![alt tag](https://1drv.ms/u/s!AuB5AKotMYKH03v6C-mLwhxZj64D)
