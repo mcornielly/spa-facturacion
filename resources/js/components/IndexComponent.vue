@@ -58,7 +58,6 @@ import { get } from '../lib/api'
 				model: {
 					data: []
 				},
-				invoices: []
 			}
 		},
 
@@ -68,7 +67,6 @@ import { get } from '../lib/api'
 						next(vm => vm.setData(res))
 				})
 
-				// console.log('res');	
 		},
 
 		beforeRouteUpdate(to, from, next){
@@ -83,7 +81,9 @@ import { get } from '../lib/api'
 			setData(res) {
 				Vue.set(this.$data, 'model', res.data.invoices)
 				this.page = this.model.current_page
-				// invoices = model.data.invoices
+            	
+            	//Progressbar
+				this.$bar.finish()				
 			},	
 			detailsPage(item){
 				this.$router.push(`/invoices/${item.id}`)
@@ -91,7 +91,6 @@ import { get } from '../lib/api'
 			nextPage(){
 				if(this.model.next_page_url){
 					const query = Object.assign({}, this.$route.query)
-
 					query.page = query.page ? (Number(query.page) + 1) : 2
 
 					this.$router.push({
@@ -103,7 +102,6 @@ import { get } from '../lib/api'
 			prevPage(){
 				if(this.model.prev_page_url){
 					const query = Object.assign({}, this.$route.query)
-
 					query.page = query.page ? (Number(query.page) - 1) : 1
 
 					this.$router.push({

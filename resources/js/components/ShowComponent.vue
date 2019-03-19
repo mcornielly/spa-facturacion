@@ -4,7 +4,7 @@
 			<span class="panel-title">{{ model.number }}</span>
 			<div>
 				<router-link to="/invoices" class="btn">Volver</router-link>		
-				<router-link to="`/invoices/${model.id}/edit`" class="btn">Editar</router-link>
+				<router-link :to="`/invoices/${model.id}/edit`" class="btn">Editar</router-link>
 				<button class="btn btn-error" @click="deleteItem">Eliminar</button>		
 			</div>
         </div>
@@ -52,7 +52,7 @@
         					<tr>
         						<th>Código</th>
         						<th>Descripción</th>
-        						<th>Precio * Unidad</th>
+        						<th>Precio x Unidad</th>
         						<th>Cantidad</th>
         						<th>Total</th>
         					</tr>
@@ -116,7 +116,6 @@ export default {
 	},
 	beforeRouteUpdate(to, from, next){
 		this.show = false
-
 		get(`/api/invoices/${to.params.id}`)
 			.then((res) => {
 				this.setData(res)
@@ -125,13 +124,16 @@ export default {
 	},
 	methods: {
 		setData(res) {
-			Vue.set(this.$data, 'model', res.data.invoice)
+			Vue.set(this.$data, 'model', res.data.model)
 			this.show = true
+
+            //Progressbar
+            this.$bar.finish()
 		},
 		deleteItem() {
 			byMethod('delete', `/api/invoices/${this.model.id}`).then((res) => {
-					// this.$router.push('/invoices')
-					if(!res.data.deleted){
+     
+					if(res.data.deleted){
 						this.$router.push('/invoices')
 					}
 				})

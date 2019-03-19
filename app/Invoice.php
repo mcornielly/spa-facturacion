@@ -3,11 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Helper\HasManyRelation;
 
 class Invoice extends Model
 {
+    use HasManyRelation;
+
     protected $fillable = [
-    	'customer_id', 'date', 'due_date', 'discount', 'terms_and_conditions'
+    	'customer_id', 'date', 'due_date', 'discount', 'terms_and_conditions', 'reference'
     ];
 
     protected $guarded = [
@@ -29,9 +32,7 @@ class Invoice extends Model
     public function setSubTotalAttribute($value)
     {
     	$this->attributes['sub_total'] = $value;
-
     	$discount = $this->attributes['discount'];
-
     	$this->attributes['total'] = $value - $discount;
     }
 }

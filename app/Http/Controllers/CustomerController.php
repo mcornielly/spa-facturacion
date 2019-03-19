@@ -7,19 +7,19 @@ use App\Customer;
 
 class CustomerController extends Controller
 {
-    public function search(Request $request)
+    public function search()
     {
-    	
-    	$search = $request->search;
+        $results = Customer::orderBy('firstname')
+            ->when(request('q'), function($query) {
+                $query->where('firstname', 'like', '%'.request('q').'%')
+                    ->orWhere('lastname', 'like', '%'.request('q').'%')
+                    ->orWhere('email', 'like', '%'.request('q').'%');
+            })
+            ->limit(6)
+            ->get();
 
-    	$result = Customer::where('firstname', 'like', '%' . $search . '%')
-    		->orWhere('lastname', 'like', '%' . $search . '%')
-    		->orWhere('email', 'like', '%' . $search . '%')
-    		->orderBy('firstname', 'DESC')
-    		->limit(10)
-    		->get();
-
-    		return compact('result');
-
+        // return response()
+        //     ->json(['results' => $results]);
+            return compact('results');
     }
 }

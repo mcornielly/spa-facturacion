@@ -30,7 +30,7 @@ class InvoiceController extends Controller
     		'due_date' => null,
     		'reference' => null,
     		'discount' => 0,
-    		'terms_and_conditions' => 'Default Terms',
+    		'terms_and_conditions' => 'Términos por Defectos',
     		'items' => [
     			[				
 	    			'product_id' => null,
@@ -46,15 +46,15 @@ class InvoiceController extends Controller
 
     public function store(Request $request)
     {
-    	$this->validate([
-    		'customer_id' 	=> 'required|integer|exists:customers, id',
+    	$request->validate([
+    		'customer_id' 	=> 'required|integer|exists:customers,id',
     		'date' 			=> 'required|date_format:Y-m-d',
     		'due_date' 		=> 'required|date_format:Y-m-d',
     		'reference'		=> 'nullable|max:100',
     		'discount' 		=> 'required|numeric|min:0',
     		'terms_and_conditions'	=> 'required|max:2000',
     		'items'			=> 'required|array|min:1',
-    		'items.*.product_id' => 'required|integer|exists:products, id',
+    		'items.*.product_id' => 'required|integer|exists:products,id',
     		'items.*.unit_price' => 'required|numeric|min:0',
     		'items.*.qty'		 => 'required|integer|min:1'					
     	]);
@@ -90,34 +90,34 @@ class InvoiceController extends Controller
 
     public function show($id)
     {
-    	$invoice = Invoice::with(['customer', 'items.product'])
+    	$model = Invoice::with(['customer', 'items.product'])
     		->findOrFail($id);
 
-    	return compact('invoice');	
+    	return compact('model');	
     }
 
     public function edit($id)
     {
-    	$invoice = Invoice::with(['customer', 'items.product'])
+    	$form = Invoice::with(['customer', 'items.product'])
     		->findOrFail($id);
 
-    	return compact('invoice');	
+    	return compact('form');	
     }
 
     public function update(Request $request, $id)
     {
     	$invoice = Invoice::findOrFail($id);
 
-    	$this->validate([
-    		'customer_id' 	=> 'required|integer|exists:customers, id',
+    	$request->validate([
+    		'customer_id' 	=> 'required|integer|exists:customers,id',
     		'date' 			=> 'required|date_format:Y-m-d',
     		'due_date' 		=> 'required|date_format:Y-m-d',
     		'reference'		=> 'nullable|max:100',
     		'discount' 		=> 'required|numeric|min:0',
     		'terms_and_conditions'	=> 'required|max:2000',
     		'items'			=> 'required|array|min:1',
-    		'items.*.id'	=> 'sometimes|required|integer|exists:invoce_items,id,invoice_id'.$invoice->id,
-    		'items.*.product_id' => 'required|integer|exists:products, id',
+    		'items.*.id'	=> 'sometimes|required|integer|exists:invoice_items,id,invoice_id'.$invoice->id,
+    		'items.*.product_id' => 'required|integer|exists:products,id',
     		'items.*.unit_price' => 'required|numeric|min:0',
     		'items.*.qty'		 => 'required|integer|min:1'					
     	]);
@@ -150,10 +150,12 @@ class InvoiceController extends Controller
     	$invoice->items()->delete();
     	$invoice->delete();
 
-    	// return responce()
-    	// 	->json(['deleted' => true]);	
-    	return compact('invoice');
+        $deleted = true;
+
+      //   return responce()
+    		// ->json(['deleted' => true]);	
+    	return compact('deleted');
     }
 
-
+ 
 }

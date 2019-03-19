@@ -2,21 +2,17 @@
 	position: relative;
 	display: block;
 	background: #fff;
-
 	&-open {
 		border-bottom: 0;
-
 		.form-control {
 			background: #fff;
 			box-shadow: $box-shadow;
 			border: 1px solid $border-color;
 		}
 	}
-
 	&-inner {
 		position: relative;
 	}
-
 	&-selected {
 		cursor: pointer;
 		user-select: none;
@@ -25,11 +21,10 @@
 		line-height: 15px;
 	}
 
-	&-dropdow {
+	&-dropdown {
 		width: 100%;
 		position: absolute;
-		padding-top: 3px;
-		z-index: 45px;
+		z-index: 45;
 		padding: 5px;
 		background: #fff;
 		border-right: 1px solid $border-color;
@@ -47,35 +42,30 @@
 		padding: 4px 8px;
 		width: 100%;
 		display: block;
-
 		&:focus {
 			outline-style: dotted;
 			outline-width: 1px;
 			outline-offset: 1px;  
 		} 
 	}
-
 	&-input_wrap {
 		position: relative;
 	}
-
 	&-list {
 		display: block;
 		margin: 0;
+		padding: 0;
 	}
-
 	&-item {
 		display: block;
 		margin-bottom: 1px;
 	}
-
 	&-link {
 		cursor: pointer;
 		display: block;
 		padding: 2px;
 		background: #fff;
 	}
-
 	&-active {
 		background: $color-primary!important;
 		color: #fff;

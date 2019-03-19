@@ -24,6 +24,7 @@ Vue.component('index-component', require('./components/IndexComponent.vue'));
 Vue.component('app-component', require('./components/AppComponent.vue'));
 Vue.component('form-component', require('./components/FormComponent.vue'));
 Vue.component('show-component', require('./components/ShowComponent.vue'));
+Vue.component('typeahead-component', require('./components/partials/TypeaHead.vue'));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -34,8 +35,14 @@ Vue.component('show-component', require('./components/ShowComponent.vue'));
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import AppComponent from './components/AppComponent.vue'
+import AppComponent from './components/AppComponent'
 import router from './router'
+import bar from './components/progress'
+
+router.beforeEach((to, from, next) => {
+    bar.start()
+    next()
+})
 
 Vue.filter('formatMoney', (value) => {
 	return Number(value)

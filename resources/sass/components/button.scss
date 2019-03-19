@@ -10,6 +10,7 @@
 	user-select: none;
 	background: $color-grey;
 	box-shadow: 0 1px darken($color-grey, 10%);
+	// margin-right: 5px;
 
 	&:focus {
 		outline-style: dotted;
