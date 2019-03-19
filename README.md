@@ -18,3 +18,14 @@
 ![alt tag](https://github.com/mcornielly/spa-facturacion/blob/master/img_git/show.png)
 ![alt tag](https://github.com/mcornielly/spa-facturacion/blob/master/img_git/edit.png)
 ![alt tag](https://github.com/mcornielly/spa-facturacion/blob/master/img_git/create.png)
+
+-----------------------------------
+
+### Installation
+`git clone https://github.com/codekerala/laravel-vue-js-spa-invoice.git`
+
+`cd laravel-vue-js-spa-invoice`
+
+`composer install`
+
+`npm install`
