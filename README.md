@@ -22,7 +22,7 @@
 -----------------------------------
 
 ### Installation
-`git clone https://github.com/mcornielly/spa-facturacion.git`
+`git clone https://github.com/mcornielly/spa-invoice.git`
 
 `cd spa-invoice`
 
