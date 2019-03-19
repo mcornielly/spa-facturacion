@@ -33,5 +33,9 @@
 ### Remember
 To create the .env file
 
+- Practices of programation with tecnologies Laravel and Vue.js 
+
+-----------------------------------
+
 ### Miguel Angel Cornielly
 - Practices of programation with tecnologies Laravel and Vue.js 
