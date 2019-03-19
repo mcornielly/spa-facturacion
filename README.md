@@ -15,6 +15,6 @@
 -----------------------------------
 
 ![alt tag](https://github.com/mcornielly/spa-facturacion/blob/master/img_git/index.png)
-![alt tag](https://github.com/mcornielly/spa-facturacion/tree/master/img_git/show.png)
+![alt tag](https://github.com/mcornielly/spa-facturacion/blob/master/img_git/show.png)
 ![alt tag](https://github.com/mcornielly/spa-facturacion/tree/master/img_git/edit.png)
 ![alt tag](https://github.com/mcornielly/spa-facturacion/tree/master/img_git/crate.png)
