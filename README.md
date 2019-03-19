@@ -15,3 +15,4 @@
 
 
 ![alt text](https://github.com/mcornielly/spa-facturacion/tree/master/img_git)
+![alt tag](https://github.com/mcornielly/spa-facturacion/tree/master/img_git)
