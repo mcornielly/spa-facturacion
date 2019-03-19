@@ -16,6 +16,4 @@ Provides
 -Advance filter
 -Filter relations
 
-```
 <img src="https://1drv.ms/u/s!AuB5AKotMYKH03v6C-mLwhxZj64D" />
-```
