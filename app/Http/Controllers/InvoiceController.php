@@ -32,7 +32,7 @@ class InvoiceController extends Controller
     		'discount' => 0,
     		'terms_and_conditions' => 'Términos por Defectos',
     		'items' => [
-    			[				
+			[				
 	    			'product_id' => null,
 	    		    'product' => null,
 	    		    'unit_price' => 0,
@@ -69,7 +69,6 @@ class InvoiceController extends Controller
 
     	$invoice = DB::transaction(function() use($invoice, $request){
     		$counter = Counter::where('key', 'invoice')->first();
-
     		$invoice->number = $counter->prefix . $counter->value;
 	
 	    	
@@ -109,17 +108,17 @@ class InvoiceController extends Controller
     	$invoice = Invoice::findOrFail($id);
 
     	$request->validate([
-    		'customer_id' 	=> 'required|integer|exists:customers,id',
-    		'date' 			=> 'required|date_format:Y-m-d',
-    		'due_date' 		=> 'required|date_format:Y-m-d',
-    		'reference'		=> 'nullable|max:100',
-    		'discount' 		=> 'required|numeric|min:0',
-    		'terms_and_conditions'	=> 'required|max:2000',
-    		'items'			=> 'required|array|min:1',
-    		'items.*.id'	=> 'sometimes|required|integer|exists:invoice_items,id,invoice_id'.$invoice->id,
-    		'items.*.product_id' => 'required|integer|exists:products,id',
-    		'items.*.unit_price' => 'required|numeric|min:0',
-    		'items.*.qty'		 => 'required|integer|min:1'					
+    		'customer_id' 	          => 'required|integer|exists:customers,id',
+    		'date' 			          => 'required|date_format:Y-m-d',
+    		'due_date' 		          => 'required|date_format:Y-m-d',
+    		'reference'		          => 'nullable|max:100',
+    		'discount'                => 'required|numeric|min:0',
+    		'terms_and_conditions'	  => 'required|max:2000',
+    		'items'			          => 'required|array|min:1',
+    		'items.*.id'	          => 'sometimes|required|integer|exists:invoice_items,id,invoice_id,'.$invoice->id,
+    		'items.*.product_id'      => 'required|integer|exists:products,id',
+    		'items.*.unit_price'      => 'required|numeric|min:0',
+    		'items.*.qty'		      => 'required|integer|min:1'		
     	]);
 
     	$invoice->fill($request->except('items'));

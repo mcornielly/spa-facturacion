@@ -26,14 +26,14 @@ trait HasManyRelation {
 		$this->save();
 
 		$parentKey = $this->getKeyName();
-		$parentId = $this->getAttributes($parentKey);
+		$parentId = $this->getAttribute($parentKey);
 
 		foreach($relations as $key => $items) {
-			$updateIds = [];
+			$updatedIds = [];
 			$newItems = [];
 
 			//1. filter and update
-			foreach ($item as $item) {
+			foreach ($items as $item) {
 				$model = $this->{$key}()->getModel();
 				$localKey = $model->getKeyName();
 				$foreignKey = $this->{$key}()->getForeignKeyName();
@@ -47,7 +47,7 @@ trait HasManyRelation {
 						if($found){
 							$found->fill($item);
 							$found->save();
-							$updateIds[] = $localId;
+							$updatedIds[] = $localId;
 						}	
 				}else{
 					$newItems[] = $model->fill($item);
@@ -55,12 +55,12 @@ trait HasManyRelation {
 			}
 
 			//2. delete non-update items
-			$model = $this->{$key}()->getModel();
-			$localkey = $model->getKeyName();
-			$foreignKey = $this->{$key}()->getForeignKeyName();
-			$model->whereNotIn($localkey, $updateIds)
-				->where(foreignKey, $parentId)
-				->delete();
+            $model = $this->{$key}()->getModel();
+            $localKey = $model->getKeyName();
+            $foreignKey = $this->{$key}()->getForeignKeyName();
+            $model->whereNotIn($localKey, $updatedIds)
+                ->where($foreignKey, $parentId)
+                ->delete();
 
 			//3. save new items
 			if(count($newItems)){
