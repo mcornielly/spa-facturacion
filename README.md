@@ -19,7 +19,7 @@
 ![alt tag](https://github.com/mcornielly/spa-facturacion/blob/master/img_git/edit.png)
 ![alt tag](https://github.com/mcornielly/spa-facturacion/blob/master/img_git/create.png)
 
------------------------------------
+---
 
 ### Installation
 ---
@@ -53,7 +53,6 @@ Run the server:
 
 `$php artisan serve`
 
-- Practices of programation with tecnologies Laravel and Vue.js 
 
 -----------------------------------
 
