@@ -22,16 +22,38 @@
 -----------------------------------
 
 ### Installation
-`git clone https://github.com/mcornielly/spa-invoice.git`
+---
 
-`cd spa-invoice`
+`$ git clone https://github.com/mcornielly/spa-invoice.git`
 
-`composer install`
+`$ cd spa-invoice`
 
-`npm install`
+`$ composer install`
 
+`$ npm install`
+
+First steps:
+------------
 ### Remember
-To create the .env file
+Create and configure the .env file and configure the following
+`
+ To create the root/.env file
+`
+
+Generate key:
+------------
+`
+$ spa-invoice /php artisan key:generate
+`
+Execute the command:
+----
+`
+$ php artisan migrate
+`
+Run the server:
+`
+$php artisan serve
+`
 
 - Practices of programation with tecnologies Laravel and Vue.js 
 
