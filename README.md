@@ -33,27 +33,25 @@
 `$ npm install`
 
 First steps:
-------------
+---
 ### Remember
-Create and configure the .env file and configure the following
-`
- To create the root/.env file
-`
+
+Create and configure the .env file and configure
+
+`To create the root/.env file`
 
 Generate key:
-------------
-`
-$ spa-invoice /php artisan key:generate
-`
+---
+`$ spa-invoice /php artisan key:generate`
+
+
 Execute the command:
 ----
-`
-$ php artisan migrate
-`
+`$ php artisan migrate`
+
 Run the server:
-`
-$php artisan serve
-`
+
+`$php artisan serve`
 
 - Practices of programation with tecnologies Laravel and Vue.js 
 
